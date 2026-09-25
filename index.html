@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05070b">
+<meta name="description" content="Hanzzy Activator Windows — Panduan lengkap aktivasi Windows 10/11 & Office pake MAS">
+<title>Hanzzy Activator Windows — Professional Activation Guide</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root{
+    --bg:#04060a;
+    --bg2:#080b11;
+    --panel:rgba(14,18,25,.72);
+    --panel2:#0c1017;
+    --border:rgba(255,255,255,.08);
+    --border2:rgba(255,255,255,.15);
+    --text:#f5f7fb;
+    --muted:#8892a0;
+    --blue:#1677ff;
+    --blue2:#58b2ff;
+    --cyan:#6ddcff;
+    --green:#42d392;
+    --red:#ff5d70;
+    --yellow:#ffc857;
+    --purple:#a855f7;
+    --shadow:0 30px 100px rgba(0,0,0,.5);
+    --glow:0 0 40px rgba(22,119,255,.35);
+}
+
+body.light{
+    --bg:#f0f4fa;
+    --bg2:#fff;
+    --panel:rgba(255,255,255,.75);
+    --panel2:#fff;
+    --border:rgba(0,0,0,.07);
+    --border2:rgba(0,0,0,.14);
+    --text:#0a0e15;
+    --muted:#5e6874;
+    --blue:#076dff;
+    --blue2:#0878ff;
+    --cyan:#087dcc;
+    --shadow:0 25px 80px rgba(0,0,0,.1);
+    --glow:0 0 40px rgba(7,109,255,.2);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,sans-serif;
+    transition:background .4s,color .4s;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* ========== BACKGROUND LAYERS ========== */
+.bg-layer{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.bg-grad{
+    background:
+        radial-gradient(circle at 75% -10%,rgba(22,119,255,.28),transparent 40%),
+        radial-gradient(circle at 10% 60%,rgba(168,85,247,.08),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(0,180,255,.06),transparent 25%);
+    transition:.6s;
+}
+
+body.light .bg-grad{
+    background:
+        radial-gradient(circle at 75% -10%,rgba(22,119,255,.14),transparent 40%),
+        radial-gradient(circle at 10% 60%,rgba(168,85,247,.05),transparent 30%);
+}
+
+.bg-grid{
+    opacity:.28;
+    background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:52px 52px;
+    mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 75%);
+}
+
+body.light .bg-grid{
+    background-image:
+        linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);
+}
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+}
+
+/* Cursor glow */
+.cursor-glow{
+    position:fixed;
+    width:600px;height:600px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(22,119,255,.09),transparent 65%);
+    pointer-events:none;
+    z-index:2;
+    transform:translate(-50%,-50%);
+    transition:opacity .3s;
+    will-change:transform;
+}
+
+/* Scroll progress */
+.scroll-progress{
+    position:fixed;
+    top:0;left:0;
+    height:2px;
+    background:linear-gradient(90deg,var(--blue),var(--cyan),var(--purple));
+    z-index:999;
+    width:0%;
+    box-shadow:0 0 15px var(--blue);
+    transition:width .1s;
+}
+
+a{color:inherit;}
+
+/* ========== SIDEBAR ========== */
+.sidebar{
+    position:fixed;
+    z-index:100;
+    top:0;left:0;bottom:0;
+    width:260px;
+    padding:26px 16px;
+    background:rgba(6,9,14,.82);
+    border-right:1px solid var(--border);
+    backdrop-filter:blur(28px);
+    -webkit-backdrop-filter:blur(28px);
+    transition:.3s;
+}
+body.light .sidebar{background:rgba(255,255,255,.85);}
+
+.brand{
+    display:flex;align-items:center;gap:13px;
+    padding:0 10px 32px;
+    position:relative;
+}
+
+.brand-logo{
+    width:38px;height:38px;
+    filter:drop-shadow(0 0 18px rgba(22,119,255,.55));
+    animation:logoPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoPulse{
+    0%,100%{filter:drop-shadow(0 0 18px rgba(22,119,255,.55))}
+    50%{filter:drop-shadow(0 0 28px rgba(22,119,255,.85))}
+}
+
+.brand-name{font-size:14px;font-weight:800;letter-spacing:-.3px;}
+.brand-name small{
+    display:block;margin-top:4px;
+    color:var(--muted);font-size:9px;font-weight:600;
+    letter-spacing:1.2px;
+}
+
+.nav-title{
+    padding:8px 10px;color:var(--muted);
+    font-size:9px;font-weight:800;
+    letter-spacing:1.8px;text-transform:uppercase;
+}
+
+.nav a{
+    position:relative;
+    display:flex;align-items:center;gap:12px;
+    padding:12px 14px;margin:3px 0;
+    color:var(--muted);text-decoration:none;
+    border-radius:11px;font-size:12.5px;font-weight:500;
+    transition:.25s cubic-bezier(.4,0,.2,1);
+    cursor:pointer;
+    overflow:hidden;
+}
+
+.nav a::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(22,119,255,.15),transparent 60%);
+    opacity:0;
+    transition:opacity .3s;
+}
+
+.nav a:hover::after{opacity:1;}
+.nav a:hover{color:var(--text);transform:translateX(3px);}
+
+.nav a.active{
+    color:var(--text);
+    background:linear-gradient(90deg,rgba(22,119,255,.16),rgba(22,119,255,.02));
+    font-weight:700;
+}
+
+.nav a.active::before{
+    content:"";position:absolute;
+    left:0;top:11px;bottom:11px;width:2.5px;
+    border-radius:5px;background:var(--blue);
+    box-shadow:0 0 14px var(--blue);
+}
+
+.nav-icon{
+    width:20px;text-align:center;font-size:15px;
+    position:relative;z-index:1;
+}
+
+.nav a span:not(.nav-icon){position:relative;z-index:1;}
+
+.sidebar-bottom{
+    position:absolute;left:16px;right:16px;bottom:22px;
+}
+
+.theme{
+    width:100%;padding:12px;
+    border:1px solid var(--border);
+    border-radius:11px;
+    background:var(--panel);
+    color:var(--muted);cursor:pointer;
+    font-size:11px;font-weight:600;
+    transition:.25s;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    font-family:Inter,sans-serif;
+}
+
+.theme:hover{
+    color:var(--text);
+    border-color:rgba(22,119,255,.4);
+    background:rgba(22,119,255,.08);
+    transform:translateY(-1px);
+}
+
+/* ========== MAIN ========== */
+.main{
+    margin-left:260px;
+    padding:0 6%;
+    position:relative;
+    z-index:3;
+}
+
+.container{width:min(1080px,100%);margin:auto;}
+
+.topbar{
+    height:80px;display:flex;
+    align-items:center;justify-content:space-between;
+    position:sticky;top:0;
+    backdrop-filter:blur(12px);
+    z-index:50;
+}
+
+.version{
+    padding:8px 13px;border:1px solid var(--border);
+    border-radius:999px;color:var(--muted);
+    font:600 10px "JetBrains Mono",monospace;
+    background:rgba(255,255,255,.02);
+    display:flex;align-items:center;gap:7px;
+}
+
+.version-dot{
+    width:5px;height:5px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 8px var(--green);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.5;transform:scale(.85)}
+}
+
+.mobile-menu{
+    display:none;padding:9px 12px;
+    border:1px solid var(--border);
+    border-radius:10px;background:var(--panel);
+    color:var(--text);cursor:pointer;font-size:16px;
+}
+
+/* ========== HERO ========== */
+.hero{
+    position:relative;
+    min-height:640px;
+    display:flex;flex-direction:column;
+    justify-content:center;
+    padding:60px 0 80px;
+}
+
+.hero-logo{
+    position:absolute;right:5%;top:80px;
+    width:230px;height:230px;opacity:.9;
+    filter:drop-shadow(0 0 30px rgba(22,119,255,.5))
+           drop-shadow(0 0 90px rgba(22,119,255,.22));
+    animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(0deg)}
+    50%{transform:translateY(-15px) rotate(-1.5deg)}
+}
+
+.status{
+    width:max-content;display:flex;
+    align-items:center;gap:9px;
+    padding:8px 13px;
+    border:1px solid rgba(22,119,255,.3);
+    border-radius:999px;
+    background:rgba(22,119,255,.07);
+    color:#75b9ff;
+    font:700 9.5px "JetBrains Mono",monospace;
+    letter-spacing:1px;
+    backdrop-filter:blur(10px);
+}
+
+.status-dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 14px var(--green);
+    animation:pulse 2s infinite;
+}
+
+.hero h1{
+    position:relative;z-index:2;
+    max-width:780px;margin-top:24px;
+    font-size:clamp(50px,7.5vw,92px);
+    line-height:.9;letter-spacing:-5.5px;
+    font-weight:900;
+}
+
+.hero h1 span{
+    display:block;
+    background:linear-gradient(110deg,#fff 0%,#65b7ff 40%,#1677ff 70%,#a855f7 100%);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift{
+    0%,100%{background-position:0% center}
+    50%{background-position:100% center}
+}
+
+body.light .hero h1 span{
+    background:linear-gradient(110deg,#0a0e15,#0878ff,#a855f7);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+}
+
+.hero p{
+    max-width:620px;margin-top:26px;
+    color:var(--muted);font-size:14.5px;line-height:1.85;
+}
+
+.buttons{display:flex;gap:11px;margin-top:32px;flex-wrap:wrap;}
+
+.btn{
+    display:inline-flex;align-items:center;
+    justify-content:center;gap:9px;
+    padding:13px 20px;
+    border:1px solid var(--border);
+    border-radius:11px;
+    background:var(--panel);
+    color:var(--text);text-decoration:none;
+    font-size:12px;font-weight:700;
+    transition:.25s cubic-bezier(.4,0,.2,1);
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+    font-family:Inter,sans-serif;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    border-color:rgba(22,119,255,.55);
+    box-shadow:0 15px 40px rgba(22,119,255,.2);
+}
+
+.btn.primary{
+    background:linear-gradient(135deg,#1677ff,#0a5ce0);
+    border-color:transparent;
+    color:#fff;
+    box-shadow:0 12px 40px rgba(22,119,255,.35);
+}
+
+.btn.primary:hover{
+    box-shadow:0 18px 55px rgba(22,119,255,.55);
+}
+
+.btn.primary::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,transparent,rgba(255,255,255,.25),transparent);
+    transform:translateX(-100%);
+    transition:.6s;
+}
+
+.btn.primary:hover::before{transform:translateX(100%);}
+
+.windows-badge{
+    display:flex;align-items:center;gap:13px;
+    width:max-content;margin-top:40px;
+    padding:13px 16px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:var(--panel);
+    backdrop-filter:blur(15px);
+    transition:.3s;
+}
+
+.windows-badge:hover{
+    border-color:rgba(22,119,255,.35);
+    transform:translateY(-2px);
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+.windows-mini{width:30px;height:30px;}
+.windows-badge strong{display:block;font-size:11.5px;font-weight:700;}
+.windows-badge span{
+    display:block;margin-top:3px;
+    color:var(--muted);font-size:9.5px;
+    font-family:"JetBrains Mono",monospace;
+}
+
+/* ========== STATS ========== */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    margin-top:60px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    background:var(--border);
+    backdrop-filter:blur(15px);
+}
+
+.stat{
+    padding:22px 20px;
+    background:var(--panel);
+    transition:.3s;
+}
+
+.stat:hover{background:rgba(22,119,255,.06);}
+
+.stat-num{
+    font-size:26px;font-weight:900;
+    letter-spacing:-1px;
+    background:linear-gradient(135deg,#fff,#58b2ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    font-family:"JetBrains Mono",monospace;
+}
+
+body.light .stat-num{
+    background:linear-gradient(135deg,#0a0e15,#0878ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+}
+
+.stat-label{
+    margin-top:7px;
+    color:var(--muted);font-size:10px;
+    font-weight:600;letter-spacing:.5px;
+    text-transform:uppercase;
+}
+
+/* ========== SECTION ========== */
+section{scroll-margin-top:40px;}
+.section{padding-top:120px;}
+
+.section-label{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-bottom:12px;color:var(--blue2);
+    font:700 10px "JetBrains Mono",monospace;
+    letter-spacing:1.5px;
+    padding:6px 11px;
+    border:1px solid rgba(22,119,255,.2);
+    border-radius:999px;
+    background:rgba(22,119,255,.05);
+}
+
+.section-label::before{
+    content:"";
+    width:5px;height:5px;border-radius:50%;
+    background:var(--blue2);
+    box-shadow:0 0 8px var(--blue2);
+}
+
+.section h2{
+    font-size:clamp(28px,4vw,38px);
+    letter-spacing:-1.8px;
+    font-weight:900;
+}
+
+.section-desc{
+    max-width:680px;margin-top:14px;
+    color:var(--muted);font-size:13.5px;line-height:1.85;
+}
+
+/* ========== TERMINAL ========== */
+.terminal{
+    overflow:hidden;margin-top:32px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:18px;
+    background:#06080c;
+    box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 60px rgba(22,119,255,.08);
+    position:relative;
+}
+
+.terminal::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    border-radius:18px;
+    padding:1px;
+    background:linear-gradient(135deg,rgba(22,119,255,.4),transparent 40%,transparent 60%,rgba(168,85,247,.3));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
+}
+
+.terminal-head{
+    height:50px;display:flex;
+    align-items:center;padding:0 18px;
+    border-bottom:1px solid #1c222c;
+    background:linear-gradient(180deg,#0a0d12,#080a0f);
+}
+
+.dots{display:flex;gap:7px;}
+.dots i{
+    width:10px;height:10px;border-radius:50%;
+    background:#2d343d;transition:.25s;
+}
+.dots i:nth-child(1){background:#ff5f57;}
+.dots i:nth-child(2){background:#febc2e;}
+.dots i:nth-child(3){background:#28c840;}
+
+.terminal-title{
+    margin-left:16px;color:#717b88;
+    font:500 11px "JetBrains Mono",monospace;
+}
+
+.terminal-body{padding:28px;min-height:260px;}
+
+.terminal-line{
+    color:#8b96a5;
+    font:12.5px/2 "JetBrains Mono",monospace;
+}
+
+.blue{color:#55adff;}
+.green{color:#42d392;}
+.yellow{color:#ffc857;}
+
+.cursor{
+    display:inline-block;width:8px;height:15px;
+    margin-left:3px;vertical-align:middle;
+    background:#fff;animation:blink 1s infinite;
+}
+
+@keyframes blink{50%{opacity:0}}
+
+.command-area{display:flex;gap:10px;margin-top:20px;}
+
+.command{
+    flex:1;min-width:0;overflow:auto;
+    white-space:nowrap;padding:15px 17px;
+    border:1px solid #252d38;
+    border-radius:10px;
+    background:#030405;
+    color:#e9edf3;
+    font:12px "JetBrains Mono",monospace;
+    transition:.25s;
+    cursor:pointer;
+    position:relative;
+}
+
+.command:hover{
+    border-color:rgba(22,119,255,.5);
+    background:#050810;
+    box-shadow:inset 0 0 30px rgba(22,119,255,.05);
+}
+
+.command::before{
+    content:"$ ";
+    color:var(--green);
+    font-weight:700;
+}
+
+.copy{
+    padding:0 20px;
+    border:1px solid #303844;
+    border-radius:10px;
+    background:linear-gradient(180deg,#1a212b,#12171e);
+    color:#fff;cursor:pointer;
+    font-size:11.5px;font-weight:700;
+    transition:.25s;white-space:nowrap;
+    font-family:Inter,sans-serif;
+    position:relative;
+    overflow:hidden;
+}
+
+.copy:hover{
+    background:linear-gradient(180deg,#222a35,#1a212b);
+    border-color:rgba(22,119,255,.5);
+    transform:translateY(-1px);
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.copy:active{transform:translateY(0);}
+.copy.copied{
+    background:linear-gradient(180deg,#0d3d2a,#0a2f21);
+    border-color:rgba(66,211,146,.5);
+    color:var(--green);
+}
+
+/* ========== STEPS ========== */
+.steps{display:grid;gap:13px;margin-top:34px;}
+
+.step{
+    display:grid;
+    grid-template-columns:52px 1fr;
+    gap:18px;padding:24px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:var(--panel);
+    backdrop-filter:blur(15px);
+    transition:.3s cubic-bezier(.4,0,.2,1);
+    position:relative;
+    overflow:hidden;
+}
+
+.step::before{
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:2px;
+    background:linear-gradient(180deg,var(--blue),transparent);
+    opacity:0;
+    transition:.3s;
+}
+
+.step:hover{
+    border-color:rgba(22,119,255,.3);
+    transform:translateX(5px);
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.step:hover::before{opacity:1;}
+
+.step-number{
+    width:38px;height:38px;
+    display:grid;place-items:center;
+    border-radius:11px;
+    background:linear-gradient(135deg,rgba(22,119,255,.15),rgba(22,119,255,.05));
+    border:1px solid rgba(22,119,255,.25);
+    color:#66b2ff;
+    font:700 12px "JetBrains Mono",monospace;
+    transition:.3s;
+}
+
+.step:hover .step-number{
+    background:linear-gradient(135deg,#1677ff,#0a5ce0);
+    color:#fff;
+    border-color:transparent;
+    box-shadow:0 8px 25px rgba(22,119,255,.4);
+}
+
+.step h3{
+    margin-bottom:8px;font-size:15px;
+    font-weight:700;letter-spacing:-.3px;
+}
+
+.step p{
+    color:var(--muted);font-size:12px;
+    line-height:1.8;
+}
+
+.step p strong{color:var(--text);font-weight:600;}
+
+.code{
+    margin-top:13px;overflow-x:auto;
+    padding:13px 15px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:#06080c;
+    color:#72baff;
+    font:11.5px "JetBrains Mono",monospace;
+    cursor:pointer;
+    transition:.25s;
+    position:relative;
+}
+
+.code::after{
+    content:"click to copy";
+    position:absolute;
+    right:12px;top:50%;
+    transform:translateY(-50%);
+    font-size:9px;
+    color:#4a5464;
+    font-family:Inter,sans-serif;
+    font-weight:600;
+    opacity:0;
+    transition:.25s;
+}
+
+.code:hover{
+    border-color:rgba(22,119,255,.5);
+    background:#080c14;
+    box-shadow:inset 0 0 40px rgba(22,119,255,.06);
+}
+
+.code:hover::after{opacity:1;}
+
+/* ========== CARDS ========== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:13px;margin-top:32px;
+}
+
+.card{
+    position:relative;overflow:hidden;
+    padding:24px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:var(--panel);
+    backdrop-filter:blur(15px);
+    transition:.35s cubic-bezier(.4,0,.2,1);
+}
+
+.card::before{
+    content:"";position:absolute;
+    width:120px;height:120px;
+    right:-50px;top:-50px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(22,119,255,.15),transparent 70%);
+    filter:blur(15px);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(22,119,255,.35);
+    box-shadow:0 25px 60px rgba(0,0,0,.35),0 0 40px rgba(22,119,255,.1);
+}
+
+.card:hover::before{
+    width:200px;height:200px;
+    right:-80px;top:-80px;
+}
+
+.card-icon{
+    position:relative;
+    width:42px;height:42px;
+    display:grid;place-items:center;
+    margin-bottom:18px;
+    border:1px solid rgba(22,119,255,.22);
+    border-radius:11px;
+    background:linear-gradient(135deg,rgba(22,119,255,.12),rgba(22,119,255,.03));
+    color:var(--blue2);
+    font:700 12px "JetBrains Mono",monospace;
+    transition:.3s;
+}
+
+.card:hover .card-icon{
+    background:linear-gradient(135deg,#1677ff,#0a5ce0);
+    color:#fff;
+    border-color:transparent;
+    box-shadow:0 10px 30px rgba(22,119,255,.4);
+}
+
+.card h3{
+    font-size:15px;font-weight:700;
+    letter-spacing:-.3px;position:relative;
+}
+
+.card p{
+    margin-top:9px;color:var(--muted);
+    font-size:12px;line-height:1.8;
+    position:relative;
+}
+
+/* ========== WARNING ========== */
+.warning{
+    margin-top:32px;
+    padding:20px 22px;
+    border:1px solid rgba(255,93,112,.28);
+    border-radius:13px;
+    background:linear-gradient(135deg,rgba(255,93,112,.08),rgba(255,93,112,.02));
+    display:flex;gap:15px;align-items:flex-start;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+.warning:hover{
+    border-color:rgba(255,93,112,.5);
+    box-shadow:0 15px 40px rgba(255,93,112,.1);
+}
+
+.warning-icon{
+    font-size:24px;line-height:1;
+    color:var(--red);
+    animation:pulse 2.5s infinite;
+}
+
+.warning strong{
+    display:block;margin-bottom:6px;
+    font-size:12.5px;color:var(--red);
+    font-weight:700;
+}
+
+.warning p{
+    font-size:12px;color:var(--muted);
+    line-height:1.75;
+}
+
+/* ========== INFO ========== */
+.info{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:13px;margin-top:32px;
+}
+
+.info-box{
+    padding:26px;border:1px solid var(--border);
+    border-radius:15px;background:var(--panel);
+    backdrop-filter:blur(15px);
+    transition:.3s;
+}
+
+.info-box:hover{
+    border-color:rgba(22,119,255,.3);
+    transform:translateY(-3px);
+}
+
+.info-box h3{
+    font-size:15px;font-weight:700;
+    letter-spacing:-.3px;
+}
+
+.info-box p{
+    margin-top:10px;color:var(--muted);
+    font-size:12px;line-height:1.85;
+}
+
+.info-list{display:grid;gap:11px;margin-top:16px;}
+
+.info-list div{
+    display:flex;justify-content:space-between;
+    gap:20px;padding-bottom:11px;
+    border-bottom:1px solid var(--border);
+    font-size:11px;
+}
+
+.info-list div:last-child{
+    border-bottom:none;padding-bottom:0;
+}
+
+.info-list span:first-child{color:var(--muted);}
+.info-list span:last-child{
+    color:var(--text);font-weight:700;
+    font-family:"JetBrains Mono",monospace;
+    font-size:10.5px;
+}
+
+/* ========== FAQ ========== */
+.faq{margin-top:32px;}
+
+details{
+    border-bottom:1px solid var(--border);
+    transition:.3s;
+}
+
+details:hover{border-bottom-color:rgba(22,119,255,.3);}
+
+summary{
+    padding:20px 0;cursor:pointer;
+    list-style:none;font-size:13px;
+    font-weight:600;letter-spacing:-.2px;
+    transition:.25s;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;
+}
+
+summary:hover{color:var(--blue2);}
+summary::-webkit-details-marker{display:none;}
+
+summary::after{
+    content:"+";
+    color:var(--muted);
+    font-size:20px;font-weight:300;
+    transition:.3s;
+    flex-shrink:0;
+    width:20px;text-align:center;
+}
+
+details[open] summary{color:var(--blue2);}
+details[open] summary::after{
+    content:"−";
+    color:var(--blue2);
+    transform:rotate(180deg);
+}
+
+details p{
+    max-width:720px;padding:0 0 22px;
+    color:var(--muted);font-size:12px;
+    line-height:1.85;
+}
+
+details p strong{color:var(--text);}
+
+/* ========== TOAST ========== */
+.toast{
+    position:fixed;
+    bottom:34px;left:50%;
+    transform:translateX(-50%) translateY(120px);
+    padding:14px 24px;
+    border:1px solid rgba(66,211,146,.35);
+    border-radius:12px;
+    background:linear-gradient(135deg,rgba(66,211,146,.15),rgba(66,211,146,.05));
+    color:var(--green);
+    font-size:12px;font-weight:700;
+    backdrop-filter:blur(20px);
+    opacity:0;
+    transition:.4s cubic-bezier(.4,0,.2,1);
+    z-index:999;
+    pointer-events:none;
+    box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(66,211,146,.2);
+    display:flex;align-items:center;gap:9px;
+}
+
+.toast.show{
+    transform:translateX(-50%) translateY(0);
+    opacity:1;
+}
+
+.toast-icon{
+    width:16px;height:16px;
+    display:grid;place-items:center;
+    border-radius:50%;
+    background:var(--green);
+    color:#04060a;
+    font-size:10px;font-weight:900;
+}
+
+/* ========== FOOTER ========== */
+footer{
+    padding:120px 0 50px;
+    text-align:center;color:var(--muted);
+    font-size:11px;line-height:1.9;
+    border-top:1px solid var(--border);
+    margin-top:100px;
+}
+
+.footer-logo{
+    width:36px;margin-bottom:15px;opacity:.75;
+    transition:.3s;
+}
+
+footer:hover .footer-logo{
+    opacity:1;
+    filter:drop-shadow(0 0 20px rgba(22,119,255,.6));
+}
+
+.footer-links{
+    display:flex;justify-content:center;
+    gap:20px;margin:20px 0;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:11px;
+    font-weight:600;
+    transition:.2s;
+    padding:4px 8px;
+    border-radius:6px;
+}
+
+.footer-links a:hover{
+    color:var(--blue2);
+    background:rgba(22,119,255,.08);
+}
+
+/* ========== MOBILE ========== */
+@media(max-width:1024px){
+    .hero-logo{right:2%;width:190px;height:190px;opacity:.7;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:900px){
+    .cards{grid-template-columns:1fr;}
+    .info{grid-template-columns:1fr;}
+    .cursor-glow{display:none;}
+}
+
+@media(max-width:800px){
+    .sidebar{transform:translateX(-100%);}
+    .sidebar.open{transform:translateX(0);}
+    .main{margin-left:0;padding:0 5%;}
+    .mobile-menu{display:block;}
+    .hero{min-height:auto;padding-top:40px;}
+    .hero-logo{
+        position:absolute;top:40px;right:-30px;
+        width:160px;height:160px;opacity:.18;
+    }
+    .stats{grid-template-columns:1fr 1fr;}
+    .stat-num{font-size:22px;}
+}
+
+@media(max-width:520px){
+    .hero h1{font-size:46px;letter-spacing:-3px;}
+    .hero p{font-size:13px;}
+    .buttons{flex-direction:column;}
+    .btn{width:100%;}
+    .command-area{flex-direction:column;}
+    .copy{padding:13px;}
+    .terminal-body{padding:20px;}
+    .step{grid-template-columns:42px 1fr;gap:13px;padding:20px;}
+    .stats{grid-template-columns:1fr 1fr;}
+    .footer-links{gap:10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- BACKGROUND LAYERS -->
+<div class="bg-layer bg-grad"></div>
+<div class="bg-layer bg-grid"></div>
+<canvas id="particles"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
+    <svg class="brand-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 10L30 6V30H4V10Z" fill="#2F8CFF"/>
+        <path d="M34 5L60 1V30H34V5Z" fill="#4FA8FF"/>
+        <path d="M4 34H30V58L4 54V34Z" fill="#1677FF"/>
+        <path d="M34 34H60V63L34 59V34Z" fill="#65B9FF"/>
+    </svg>
+    <div class="brand-name">
+        Hanzzy Activator
+        <small>WINDOWS UTILITY</small>
+    </div>
+</div>
+
+<div class="nav-title">Navigation</div>
+
+<nav class="nav">
+    <a href="#home" class="active"><span class="nav-icon">⌂</span><span>Home</span></a>
+    <a href="#tutorial"><span class="nav-icon">01</span><span>Tutorial</span></a>
+    <a href="#commands"><span class="nav-icon">02</span><span>Commands</span></a>
+    <a href="#troubleshoot"><span class="nav-icon">03</span><span>Troubleshoot</span></a>
+    <a href="#faq"><span class="nav-icon">?</span><span>FAQ</span></a>
+</nav>
+
+<div class="sidebar-bottom">
+    <button class="theme" onclick="toggleTheme()">
+        <span id="themeIcon">◐</span>
+        <span id="themeText">Ganti Tema</span>
+    </button>
+</div>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+<div class="container">
+
+<header class="topbar">
+    <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+    <div></div>
+    <div class="version">
+        <span class="version-dot"></span>
+        v2.0 · HANZZY DEV
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<svg class="hero-logo" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="w1" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#69C5FF"/>
+            <stop offset="1" stop-color="#1677FF"/>
+        </linearGradient>
+        <linearGradient id="w2" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#a855f7"/>
+            <stop offset="1" stop-color="#1677FF"/>
+        </linearGradient>
+    </defs>
+    <path d="M8 40L120 22V121H8V40Z" fill="url(#w1)"/>
+    <path d="M134 20L248 4V121H134V20Z" fill="url(#w2)"/>
+    <path d="M8 135H120V234L8 216V135Z" fill="url(#w2)"/>
+    <path d="M134 135H248V252L134 236V135Z" fill="url(#w1)"/>
+</svg>
+
+<div class="status">
+    <span class="status-dot"></span>
+    WINDOWS ACTIVATION GUIDE
+</div>
+
+<h1>
+    Hanzzy
+    <span>Activator.</span>
+</h1>
+
+<p>
+    Panduan lengkap aktivasi Windows 10, Windows 11, dan Microsoft Office
+    pake Microsoft Activation Scripts (MAS). Tinggal ikutin step-nya,
+    copy command-nya, tempel di PowerShell, langsung aktif.
+</p>
+
+<div class="buttons">
+    <a href="#tutorial" class="btn primary">Mulai Tutorial →</a>
+    <a href="#commands" class="btn">Lihat Commands</a>
+</div>
+
+<div class="windows-badge">
+    <svg class="windows-mini" viewBox="0 0 64 64" fill="none">
+        <path d="M4 10L30 6V30H4V10Z" fill="#2F8CFF"/>
+        <path d="M34 5L60 1V30H34V5Z" fill="#4FA8FF"/>
+        <path d="M4 34H30V58L4 54V34Z" fill="#1677FF"/>
+        <path d="M34 34H60V63L34 59V34Z" fill="#65B9FF"/>
+    </svg>
+    <div>
+        <strong>Windows 10 / 11 + Office</strong>
+        <span>PowerShell • MAS • Built-in slmgr</span>
+    </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="stat">
+        <div class="stat-num" data-count="100">0</div>
+        <div class="stat-label">Percent Success</div>
+    </div>
+    <div class="stat">
+        <div class="stat-num" data-count="6">0</div>
+        <div class="stat-label">Steps Tutorial</div>
+    </div>
+    <div class="stat">
+        <div class="stat-num" data-count="5">0</div>
+        <div class="stat-label">Command Tools</div>
+    </div>
+    <div class="stat">
+        <div class="stat-num" data-count="24">0</div>
+        <div class="stat-label">Jam Support</div>
+    </div>
+</div>
+
+</section>
+
+<!-- TUTORIAL -->
+<section class="section" id="tutorial">
+
+<div class="section-label">01 / TUTORIAL LENGKAP</div>
+<h2>Cara aktivasi Windows & Office</h2>
+<p class="section-desc">
+    Ikutin step di bawah ini urut dari atas sampe bawah.
+    Ada 2 metode: pake PowerShell (gampang) dan pake file offline (kalo metode 1 gagal).
+</p>
+
+<div class="steps">
+
+    <div class="step">
+        <div class="step-number">01</div>
+        <div>
+            <h3>Buka PowerShell sebagai Administrator</h3>
+            <p>
+                Klik Start menu, ketik <strong>PowerShell</strong>.
+                Klik kanan di hasil pencariannya, terus pilih
+                <strong>Run as administrator</strong>. Ini WAJIB, jangan sampe lupa.
+            </p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">02</div>
+        <div>
+            <h3>Copy command MAS</h3>
+            <p>
+                Copy command di bawah ini, terus paste di PowerShell yang udah kebuka.
+                Klik command-nya buat auto-copy.
+            </p>
+            <div class="code" onclick="copyText('irm https://get.activated.win | iex')">
+                irm https://get.activated.win | iex
+            </div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">03</div>
+        <div>
+            <h3>Tekan Enter & tunggu menu muncul</h3>
+            <p>
+                Setelah paste, tekan <strong>Enter</strong>. Script bakal
+                ke-download otomatis dan menu interaktif bakal muncul
+                dalam beberapa detik. Sabar aja.
+            </p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">04</div>
+        <div>
+            <h3>Pilih opsi aktivasi</h3>
+            <p>
+                Di menu MAS, pilih angka sesuai kebutuhan:
+                <br>• <strong style="color:#42d392">[1] HWID</strong> → aktivasi Windows 10/11 permanen
+                <br>• <strong style="color:#42d392">[2] Ohook</strong> → aktivasi Microsoft Office permanen
+                <br>• <strong style="color:#42d392">[3] KMS38</strong> → aktivasi Windows sampe 2038
+                <br>• <strong style="color:#42d392">[4] Online KMS</strong> → aktivasi 180 hari (auto-renew)
+            </p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">05</div>
+        <div>
+            <h3>Tunggu proses selesai</h3>
+            <p>
+                Script bakal ngejalanin aktivasi otomatis. Kalo udah muncul
+                pesan sukses, tutup PowerShell dan restart komputer lu.
+                Cek status aktivasi di Settings → System → Activation.
+            </p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">06</div>
+        <div>
+            <h3>Metode cadangan: file offline</h3>
+            <p>
+                Kalo command di atas diblokir (internet/antivirus ngeyel),
+                download file <strong>MAS_AIO.cmd</strong> dari GitHub resmi:
+                <br><strong style="color:#72baff">github.com/massgravel/Microsoft-Activation-Scripts</strong>
+                <br>Klik kanan file → <strong>Run as administrator</strong>. Menu-nya sama.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="warning">
+    <div class="warning-icon">⚠</div>
+    <div>
+        <strong>Penting banget, master!</strong>
+        <p>
+            Pastiin lu ngejalanin command/download dari sumber resmi di atas.
+            Banyak pihak jahat yang nyebar malware dengan ngerubah URL-nya.
+            MAS ini open source, jadi kodenya bisa lu lihat sendiri.
+        </p>
+    </div>
+</div>
+
+</section>
+
+<!-- COMMANDS -->
+<section class="section" id="commands">
+
+<div class="section-label">02 / COMMANDS</div>
+<h2>Command Windows licensing</h2>
+<p class="section-desc">
+    Command built-in Windows buat cek status aktivasi. Klik command-nya buat auto-copy.
+</p>
+
+<div class="terminal">
+    <div class="terminal-head">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="terminal-title">Windows PowerShell — Administrator</div>
+    </div>
+    <div class="terminal-body">
+        <div class="terminal-line">
+            <span class="blue">PS C:\Users\User&gt;</span>
+        </div>
+        <div class="terminal-line" id="typing"></div>
+        <div class="terminal-line">
+            <span class="green">Hanzzy Utility ready.</span>
+        </div>
+        <div class="command-area">
+            <div class="command" id="mainCommand" onclick="copyMain()">irm https://get.activated.win | iex</div>
+            <button class="copy" id="mainCopyBtn" onclick="copyMain()">Copy</button>
+        </div>
+    </div>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <div class="card-icon">01</div>
+        <h3>Cek status aktivasi</h3>
+        <p>Nampilin status aktivasi Windows lu sekarang.</p>
+        <div class="code" onclick="copyText('slmgr /xpr')">slmgr /xpr</div>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">02</div>
+        <h3>Info lisensi</h3>
+        <p>Nampilin info dasar lisensi Windows yang keinstall.</p>
+        <div class="code" onclick="copyText('slmgr /dli')">slmgr /dli</div>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">03</div>
+        <h3>Info detail</h3>
+        <p>Nampilin info lisensi lebih detail dari Windows.</p>
+        <div class="code" onclick="copyText('slmgr /dlv')">slmgr /dlv</div>
+    </div>
+
+</div>
+
+<div class="info">
+
+    <div class="info-box">
+        <h3>Windows Activation</h3>
+        <p>
+            Aktivasi membantu verifikasi kalo instalasi Windows lu
+            emang berlisensi resmi. Status aktivasi bisa dicek dari
+            Settings atau pake tool built-in Windows kayak slmgr.
+        </p>
+    </div>
+
+    <div class="info-box">
+        <h3>Environment</h3>
+        <div class="info-list">
+            <div><span>Platform</span><span>Windows</span></div>
+            <div><span>Shell</span><span>PowerShell</span></div>
+            <div><span>Utility</span><span>MAS + slmgr</span></div>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<!-- TROUBLESHOOT -->
+<section class="section" id="troubleshoot">
+
+<div class="section-label">03 / TROUBLESHOOT</div>
+<h2>Kalo ada error, cek sini</h2>
+<p class="section-desc">
+    Masalah umum yang sering muncul pas aktivasi, plus solusinya.
+</p>
+
+<div class="faq">
+
+    <details>
+        <summary>PowerShell nggak bisa dibuka sebagai admin?</summary>
+        <p>
+            Klik kanan Start menu → pilih Windows Terminal (Admin) atau
+            PowerShell (Admin). Kalo nggak ada opsinya, coba login pake
+            akun administrator. Kalo masih gagal, klik Start → ketik
+            "UAC" → set User Account Control ke default.
+        </p>
+    </details>
+
+    <details>
+        <summary>Command irm error / diblokir?</summary>
+        <p>
+            Biasanya karena internet provider atau antivirus blokir URL-nya.
+            Solusinya: pake metode offline (download MAS_AIO.cmd dari GitHub),
+            atau ganti DNS ke 1.1.1.1 / 8.8.8.8. Kalo pake antivirus,
+            tambahin exclusion folder download-nya.
+        </p>
+    </details>
+
+    <details>
+        <summary>Aktivasi sukses tapi Windows masih bilang "not activated"?</summary>
+        <p>
+            Restart dulu komputernya. Kalo masih, buka PowerShell admin,
+            jalanin <strong>slmgr /xpr</strong> buat cek status. Kalo masih gagal,
+            ulangin proses pake MAS, pilih opsi yang beda (misal dari HWID
+            ke KMS38).
+        </p>
+    </details>
+
+    <details>
+        <summary>Aktivasi Office gagal terus?</summary>
+        <p>
+            Pastiin Office-nya udah keinstall dan versinya cocok.
+            Di menu MAS, pilih opsi Ohook. Kalo masih gagal, coba
+            uninstall Office dulu, install ulang, baru aktivasi pake MAS.
+        </p>
+    </details>
+
+    <details>
+        <summary>Apakah MAS aman?</summary>
+        <p>
+            MAS open source dan kodenya bisa lu audit sendiri di GitHub.
+            Selama lu download dari repo resmi (massgravel), harusnya aman.
+            Jangan pernah download dari sumber nggak jelas ya, master!
+        </p>
+    </details>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+
+<div class="section-label">04 / FAQ</div>
+<h2>Frequently asked questions</h2>
+
+<div class="faq">
+
+    <details>
+        <summary>Hanzzy Activator ini produk resmi Microsoft?</summary>
+        <p>
+            Bukan. Hanzzy Activator cuma interface panduan independen,
+            nggak berafiliasi sama Microsoft. Semua tools yang dipake
+            (MAS, slmgr) itu pihak ketiga / built-in Windows.
+        </p>
+    </details>
+
+    <details>
+        <summary>Website bisa eksekusi PowerShell otomatis?</summary>
+        <p>
+            Nggak bisa. Browser biasa nggak bisa eksekusi command PowerShell
+            secara langsung. Command di sini cuma bisa di-copy, terus
+            lu tempel manual di PowerShell sendiri. Itu buat keamanan lu juga.
+        </p>
+    </details>
+
+    <details>
+        <summary>slmgr /xpr itu ngapain?</summary>
+        <p>
+            Itu pake Software Licensing Management Tool built-in Windows
+            buat nampilin status aktivasi / kadaluarsa edisi Windows
+            yang keinstall.
+        </p>
+    </details>
+
+    <details>
+        <summary>Aktivasi resmi di mana?</summary>
+        <p>
+            Buka Settings → System → Activation. Windows bakal nampilin
+            metode aktivasi yang tersedia buat device lu (product key
+            asli atau digital license).
+        </p>
+    </details>
+
+    <details>
+        <summary>Halaman ini ngubah Windows gw nggak?</summary>
+        <p>
+            Nggak. HTML dan JavaScript yang jalan di browser nggak bisa
+            ngubah status lisensi Windows lu secara langsung. Semua
+            eksekusi harus lu lakuin manual.
+        </p>
+    </details>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <svg class="footer-logo" viewBox="0 0 64 64" fill="none">
+        <path d="M4 10L30 6V30H4V10Z" fill="#2F8CFF"/>
+        <path d="M34 5L60 1V30H34V5Z" fill="#4FA8FF"/>
+        <path d="M4 34H30V58L4 54V34Z" fill="#1677FF"/>
+        <path d="M34 34H60V63L34 59V34Z" fill="#65B9FF"/>
+    </svg>
+    <br>
+    <strong style="color:var(--text);font-size:12px;">Hanzzy Activator Windows</strong>
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#tutorial">Tutorial</a>
+        <a href="#commands">Commands</a>
+        <a href="#faq">FAQ</a>
+    </div>
+    Built by Hanzzy Dev · Windows is a trademark of Microsoft Corporation.
+</footer>
+
+</div>
+</main>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastText">Copied to clipboard</span>
+</div>
+
+<script>
+
+/* ================= PARTICLE BACKGROUND ================= */
+(function(){
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    let w, h;
+
+    function resize(){
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+    }
+
+    function init(){
+        particles = [];
+        const count = Math.min(70, Math.floor(w / 22));
+        for(let i = 0; i < count; i++){
+            particles.push({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                vx: (Math.random() - 0.5) * 0.35,
+                vy: (Math.random() - 0.5) * 0.35,
+                r: Math.random() * 1.8 + 0.4,
+                o: Math.random() * 0.4 + 0.1
+            });
+        }
+    }
+
+    function draw(){
+        ctx.clearRect(0, 0, w, h);
+        const isLight = document.body.classList.contains("light");
+        const color = isLight ? "7,109,255" : "88,178,255";
+
+        particles.forEach((p, i) => {
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if(p.x < 0 || p.x > w) p.vx *= -1;
+            if(p.y < 0 || p.y > h) p.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${color},${p.o})`;
+            ctx.fill();
+
+            // connect nearby
+            for(let j = i + 1; j < particles.length; j++){
+                const q = particles[j];
+                const dx = p.x - q.x, dy = p.y - q.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if(dist < 120){
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(q.x, q.y);
+                    ctx.strokeStyle = `rgba(${color},${0.08 * (1 - dist / 120)})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.stroke();
+                }
+            }
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    init();
+    draw();
+
+    window.addEventListener("resize", () => {
+        resize();
+        init();
+    });
+})();
+
+/* ================= CURSOR GLOW ================= */
+(function(){
+    const glow = document.getElementById("cursorGlow");
+    if(!glow) return;
+
+    let x = window.innerWidth / 2, y = window.innerHeight / 2;
+    let tx = x, ty = y;
+
+    document.addEventListener("mousemove", (e) => {
+        tx = e.clientX;
+        ty = e.clientY;
+    });
+
+    function animate(){
+        x += (tx - x) * 0.12;
+        y += (ty - y) * 0.12;
+        glow.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
+
+/* ================= SCROLL PROGRESS ================= */
+const progress = document.getElementById("scrollProgress");
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progress.style.width = pct + "%";
+});
+
+/* ================= TERMINAL TYPING ================= */
+const commandText = "irm https://get.activated.win | iex";
+const typing = document.getElementById("typing");
+let index = 0;
+
+function typeCommand(){
+    if(index < commandText.length){
+        typing.innerHTML =
+            commandText.substring(0, index + 1) +
+            '<span class="cursor"></span>';
+        index++;
+        setTimeout(typeCommand, 45);
+    } else {
+        typing.innerHTML =
+            commandText +
+            '<span class="cursor"></span>';
+    }
+}
+setTimeout(typeCommand, 600);
+
+/* ================= COPY FUNCTIONS ================= */
+function showToast(msg){
+    const toast = document.getElementById("toast");
+    const toastText = document.getElementById("toastText");
+    toastText.textContent = msg || "Copied to clipboard";
+    toast.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toast.classList.remove("show"), 1800);
+}
+
+function copyText(text){
+    const done = () => showToast("Copied: " + text);
+    if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+    } else {
+        fallbackCopy(text, done);
+    }
+}
+
+function fallbackCopy(text, cb){
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); cb(); } catch(e){}
+    document.body.removeChild(ta);
+}
+
+function copyMain(){
+    const cmd = document.getElementById("mainCommand").innerText.trim();
+    copyText(cmd);
+
+    const btn = document.getElementById("mainCopyBtn");
+    const old = btn.innerText;
+    btn.innerText = "Copied ✓";
+    btn.classList.add("copied");
+    setTimeout(() => {
+        btn.innerText = old;
+        btn.classList.remove("copied");
+    }, 1600);
+}
+
+/* ================= THEME ================= */
+function toggleTheme(){
+    document.body.classList.toggle("light");
+    const isLight = document.body.classList.contains("light");
+    localStorage.setItem("hanzzy-theme", isLight ? "light" : "dark");
+
+    document.getElementById("themeIcon").innerText = isLight ? "☀" : "◐";
+    document.getElementById("themeText").innerText = isLight ? "Mode Terang" : "Ganti Tema";
+}
+
+if(localStorage.getItem("hanzzy-theme") === "light"){
+    document.body.classList.add("light");
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("themeIcon").innerText = "☀";
+        document.getElementById("themeText").innerText = "Mode Terang";
+    });
+}
+
+/* ================= MOBILE MENU ================= */
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("open");
+}
+
+/* ================= NAV ================= */
+const links = document.querySelectorAll(".nav a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        links.forEach(item => item.classList.remove("active"));
+        link.classList.add("active");
+        if(window.innerWidth <= 800){
+            document.getElementById("sidebar").classList.remove("open");
+        }
+    });
+
+    // spotlight follow cursor
+    link.addEventListener("mousemove", (e) => {
+        const r = link.getBoundingClientRect();
+        link.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        link.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+});
+
+/* ================= ACTIVE SECTION ================= */
+const sections = document.querySelectorAll("section[id]");
+
+window.addEventListener("scroll", () => {
+    let current = "home";
+    sections.forEach(section => {
+        const top = section.offsetTop - 200;
+        if(window.scrollY >= top){
+            current = section.id;
+        }
+    });
+    links.forEach(link => {
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + current
+        );
+    });
+});
+
+/* ================= STAT COUNTER ================= */
+const statNums = document.querySelectorAll(".stat-num");
+let statsDone = false;
+
+function animateStats(){
+    if(statsDone) return;
+
+    const statsSection = document.querySelector(".stats");
+    const rect = statsSection.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 80){
+        statsDone = true;
+        statNums.forEach(el => {
+            const target = parseInt(el.dataset.count, 10);
+            let cur = 0;
+            const step = Math.max(1, Math.ceil(target / 40));
+            const timer = setInterval(() => {
+                cur += step;
+                if(cur >= target){
+                    cur = target;
+                    clearInterval(timer);
+                }
+                el.textContent = cur + (target === 100 ? "%" : "+");
+            }, 25);
+        });
+    }
+}
+
+window.addEventListener("scroll", animateStats);
+window.addEventListener("load", animateStats);
+
+/* ================= SMOOTH ANCHOR ================= */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+        const target = document.querySelector(a.getAttribute("href"));
+        if(target){
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    });
+});
+
+</script>
+</body>
+  </html>
